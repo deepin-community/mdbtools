@@ -1,0 +1,16 @@
+Descrption: Use system txt2man rather than the local one
+Author: Jean-Michel Vourgère <jmv_deb@nirgal.com>
+Forwarded: no
+Last-Update: 2020-10-18
+
+Index: mdbtools/doc/Makefile.am
+===================================================================
+--- mdbtools.orig/doc/Makefile.am
++++ mdbtools/doc/Makefile.am
+@@ -1,5 +1,5 @@
+ SHELL = /bin/sh
+-TXT2MAN = ./txt2man
++TXT2MAN = txt2man
+ PRODUCT = MDBTools
+ 
+ dist_man_MANS =

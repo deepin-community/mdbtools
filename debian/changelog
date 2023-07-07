@@ -1,5 +1,712 @@
-template-repository (1.0-1) unstable; urgency=medium
+mdbtools (1.0.0+dfsg-1.1) unstable; urgency=medium
 
-  * Initial release
+  [ Wookey ]
+  * Non-maintainer upload.
+  * Add dependency on obdcinst for odbc-mdbtools. (Closes:#1001144)
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Bastian Germann <bage@debian.org>  Mon, 03 Apr 2023 14:53:52 +0200
+
+mdbtools (1.0.0+dfsg-1) unstable; urgency=medium
+
+  * New upstream release:
+    - Drop patch 01_use_lib_odbc_dir applied upstream.
+    - Refresh patches.
+    - Aknowledge new symbols.
+  * d/copyright: Ignoring upstream api_docx/custom.css.map
+  * Bumped standard to 4.6.0: No change required.
+
+ -- Jean-Michel Vourgère <nirgal@debian.org>  Sun, 31 Oct 2021 15:01:12 +0100
+
+mdbtools (0.9.4-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Refresh patches.
+
+ -- Jean-Michel Vourgère <nirgal@debian.org>  Sat, 04 Sep 2021 14:27:04 +0200
+
+mdbtools (0.9.3-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Drop patch applied upstream.
+
+ -- Jean-Michel Vourgère <nirgal@debian.org>  Mon, 03 May 2021 11:48:12 +0200
+
+mdbtools (0.9.2-2) experimental; urgency=medium
+
+  * New upstream patch fixing FTBFS on some arch.
+
+ -- Jean-Michel Vourgère <nirgal@debian.org>  Tue, 16 Mar 2021 15:42:45 +0100
+
+mdbtools (0.9.2-1) experimental; urgency=medium
+
+  * New upstream release.
+  * libmdb3.doc: Adjustement for files renaming.
+  * Refreshed d/copyright.
+
+ -- Jean-Michel Vourgère <nirgal@debian.org>  Mon, 15 Mar 2021 09:29:42 +0100
+
+mdbtools (0.9.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Jean-Michel Vourgère <nirgal@debian.org>  Mon, 04 Jan 2021 09:12:05 +0100
+
+mdbtools (0.9.1~beta2-1) experimental; urgency=medium
+
+  * New upstream beta.
+  * No longer cleaning gmdb2 files.
+  * d/rules: Removed extra --disable-silent-rules.
+  * Moved .la files exclusion from override_dh_missing to d/not-installed.
+
+ -- Jean-Michel Vourgère <nirgal@debian.org>  Tue, 29 Dec 2020 11:07:47 +0100
+
+mdbtools (0.9.0-1) unstable; urgency=medium
+
+  * New upstream version: Dropped applied patch detect_glib.
+  * No longer distributing upstream TODO file.
+
+ -- Jean-Michel Vourgère <nirgal@debian.org>  Thu, 17 Dec 2020 21:08:23 +0100
+
+mdbtools (0.9.0~beta8-1) unstable; urgency=medium
+
+  * New upstream beta:
+    - Documentation CHANGELOG.md, faq.html, install.sgml are not more.
+  * Dropped Build-Depends on texinfo.
+  * d/copyright:
+    - Removed documentation specific license.
+    - Refreshed from AUTHORS file, no longer distributing AUTHORS separately.
+  * Moved the few remaining documentation files to libmdb3: mdbtools-doc now
+    is a transitionnal dummy package.
+  * New patch api_stability to restore mdb_init mdb_exit empty deprecated
+    functions.
+  * New patch detect_glib to fix glib autodetection.
+  * Bumped policy to 4.5.1: No change required.
+  * Made all documentation directories symbolic links to libmdb3
+    documentation. New dir_to_symlink maintscripts.
+
+ -- Jean-Michel Vourgère <nirgal@debian.org>  Sun, 13 Dec 2020 16:16:53 +0100
+
+mdbtools (0.9.0~beta5-1) unstable; urgency=medium
+
+  * New upstream beta. (Closes: #888045)
+
+ -- Jean-Michel Vourgère <nirgal@debian.org>  Sun, 08 Nov 2020 17:56:47 +0100
+
+mdbtools (0.9.0~beta4-1) unstable; urgency=medium
+
+  * New upstream beta:
+    - Aknowledged new symbol.
+
+ -- Jean-Michel Vourgère <nirgal@debian.org>  Sun, 01 Nov 2020 15:13:09 +0100
+
+mdbtools (0.9.0~beta3-2) unstable; urgency=medium
+
+  * Fixed changelog: beta3 was accidently released to unstable, typos.
+  * Install cleanup:
+    - d/not-installed specifies which .a files are not installed.
+    - Use dh 13 substitution patterns in install files.
+    - Drop debian/tmp prefix in install files.
+
+ -- Jean-Michel Vourgère <nirgal@debian.org>  Sun, 25 Oct 2020 10:49:26 +0100
+
+mdbtools (0.9.0~beta3-1) unstable; urgency=medium
+
+  * New upstream beta: Refresh patches.
+  * Bumped d/watch format to 4.
+  * Let upstream handle bash-completion snippets: No longer depends on
+    dh_bash-completion.
+  * Bumped policy to 4.5.0: Added "Rules-Requires-Root:no" to d/control.
+  * Acknowledge the loss of 2 symbols.
+
+ -- Jean-Michel Vourgère <nirgal@debian.org>  Mon, 19 Oct 2020 14:27:55 +0200
+
+mdbtools (0.9.0~beta1-1) experimental; urgency=medium
+
+  [ Jean-Michel Vourgère ]
+  * Tagged mdbtools-doc as multi-arch foreign.
+  * Adjusted upstream URL. (Closes: #968384)
+  * New upstream version:
+    - Drop patches applied upstream
+    - ABI bump: libmdb3 libmdbsql3
+    - Patch to prefer system txt2man
+    - Use new changelog file name
+  * Added Build-Depends-Package to symbol files.
+  * Bumped dh compat level to 13: Proper exclusion of some files.
+
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+  * Wrap long lines in changelog entries: 0.5-3.
+  * Bump debhelper from old 11 to 12.
+  * Set debhelper-compat version in Build-Depends.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+ -- Jean-Michel Vourgère <nirgal@debian.org>  Sun, 18 Oct 2020 15:26:09 +0200
+
+mdbtools (0.7.1-6) unstable; urgency=medium
+
+  * No longer build gmdb2 and its documentation. (Closes: #885744, #718465,
+    #830000)
+  * Switched to automatic debug package.
+  * Dropped d/patch/reproducible_builds no longer needed.
+  * Migrated git to salsa.
+  * Bumped policy to 4.1.3.
+  * Bumped compat level to 11.
+  * No longer distribute .la files.
+
+ -- Jean-Michel Vourgère <nirgal@debian.org>  Thu, 22 Mar 2018 19:15:11 +0000
+
+mdbtools (0.7.1-5) unstable; urgency=medium
+
+  * Update my maintainer email address.
+  * Dropped transitional package libmdbodbc1.
+  * Reproducible builds: Force date locale in man pages.
+  * dh_makeshlibs: Dropped odbc exception no longer required.
+  * Bumped policy to 3.9.8: Dropped obsolete gmdb .menu file.
+  * Enabled full hardening.
+  * Changed Vcs-Git url to use a secure scheme.
+
+ -- Jean-Michel Vourgère <nirgal@debian.org>  Mon, 24 Oct 2016 23:17:53 +0200
+
+mdbtools (0.7.1-4) unstable; urgency=medium
+
+  * Make builds reproducible:
+    - d/rules: New env var with changelog date.
+    - patch "reproducible_builds" to use that date in man pages.
+  * d/control: Update Vcs-Browser to match alioth changes.
+  * debian/patches/bin_output_fix: Fix typo in description. Thanks Adam
+    D. Barratt.
+
+ -- Jean-Michel Nirgal Vourgère <jmv_deb@nirgal.com>  Mon, 27 Apr 2015 12:16:11 +0200
+
+mdbtools (0.7.1-3) unstable; urgency=low
+
+  * d/control: Update homepage address. (Closes: #770933)
+
+ -- Jean-Michel Nirgal Vourgère <jmv_deb@nirgal.com>  Wed, 26 Nov 2014 15:48:24 +0100
+
+mdbtools (0.7.1-2) unstable; urgency=low
+
+  * Added build-depends on docbook-xml and rarian-compat, so that build can
+    run without network. Thanks Rohan Garg.
+  * Added cherry-pick of upsteam patches:
+    - memo_zero_len_multipage: overflow in some memo fields. Thanks to
+      lovelytwo@github.
+    - bin_output_fix: inverted source/dest memcpy. Thanks to tyzhaoqi.
+    - prop_dates: use the correct buffer for date conversion. Thanks to Shane
+      Mc Cormack.
+    - spelling: Fixes in help.
+  * Bumped policy to 3.9.6: No change required.
+
+ -- Jean-Michel Nirgal Vourgère <jmv_deb@nirgal.com>  Mon, 20 Oct 2014 12:28:11 +0200
+
+mdbtools (0.7.1-1) unstable; urgency=low
+
+  * Added keywords to gmdb.desktop, thanks lintian.
+  * New upstream version
+    - Support for ucs2 odbc (Closes: #675543)
+    - Fix mdb-array crash when file is not found (Closes: #716325)
+    - drop override_dh_autoreconf in rules since upstream INSTALL is gone.
+    - Refresh patch use_lib_odbc_dir. All other patches are gone, there were
+      applied upstream.
+    - Acknowledge new symbols in libmdb2.
+    - Drop -Wall since it is now upstream.
+    - Refresh copyright file.
+  * ODBC driver is no longer shipped as a versioned library:
+    - Rename libmdbodbc1 into odbc-mdbtools.
+    - Added back transitionnal package libmdbodbc1.
+    - Drop odbc-mdbtools.symbols and added -q in dpkg-gensymbols.
+    - Drop version in odbc-mdbtools.postinst and odbc-mdbtools.install.
+  * New patch use_common_license so that gmdb prints license from
+    /usr/share/common-licenses/. This quiets lintian.
+  * Stop using scrollkeeper:
+    - Drop build-dependency on rarian-compat. (Closes: #718465)
+    - New patch gnome-doc from upstream commit.
+    - New build-dependency on gnome-doc-utils.
+    - Add --disable-scrollkeeper in debian/rules.
+    - Add debian/clean to remove gnome-doc tmp file.
+    - Disable portability warnings in autoreconf (rules): gnome-doc generates
+      pages of ugly warnings otherwise.
+  * Bumped policy to 3.9.5: No change required.
+
+ -- Jean-Michel Vourgère <jmv_deb@nirgal.com>  Tue, 29 Oct 2013 09:29:15 +0100
+
+mdbtools (0.7-3) unstable; urgency=low
+
+  * Authorise byacc as an alternative for bison in Build-Deps.
+  * libiodbc2 supports multi-arch since 3.52.7-2+deb7u1. Added version in
+    libmdbodbc1 Breaks: and droped breaks-without-version lintian override.
+  * Use dh9 DEB_CFLAGS_MAINT_APPEND rather than patch CLFAGS dirrectly.
+  * Fixed buffer overflow in gmdb2 filename handling.
+
+ -- Jean-Michel Vourgère <jmv_deb@nirgal.com>  Fri, 12 Jul 2013 02:29:47 +0200
+
+mdbtools (0.7-2) unstable; urgency=low
+
+  * Disable silent rules compilation
+  * Compile with -Wall
+  * Added bash-completion support
+  * New patch from upstream to fix double free segv in gmdb2 when displaying
+    data page in debug window.
+  * Refreshed patch use_lib_odbc_dir
+  * Added libmdbodbc1 recommends libodbc1
+  * Updated Standards-Version to 3.9.4: No change required.
+  * Updated .desktop to format 1.0
+  * Update watch file because of upstream changes
+  * Use canonical url anonscm.debian.org for vcs fields.
+  * Fix SEGV on binaries reading (Closes: #713826)
+
+ -- Jean-Michel Vourgère <jmv_deb@nirgal.com>  Tue, 25 Jun 2013 15:29:58 +0200
+
+mdbtools (0.7-1) unstable; urgency=low
+
+  * New upstream version
+    - drop patches 03_documentation 04_fsf_comments 05_nolibexit
+      07_treeviewmodel 08_filelocals export_insert_schema install
+      namespace_cpp that were included upstream.
+    - remove the patch files from copyright
+  * Bumped Standards-Version: to 3.9.3. No change required.
+  * Updated copyright "Format:" to official version 1.
+  * Added "Multi-Arch: foreign" on mdbtools, mdbtools-gmdb.
+  * Added "Multi-Arch: same" on mdbtools-dev.
+  * Drop "Build-Conflicts: automake1.4" since we already have "Build-Depends:
+    automake >= 1.10)"
+  * Fixed copyright author for patch
+    export_repid_uuid_as_string_use_char_38_in_mysql
+  * Build-Depends on debhelper >= 9, drop lintian override
+    package-needs-versioned-debhelper-build-depends
+
+ -- Jean-Michel Vourgère <jmv_deb@nirgal.com>  Fri, 29 Jun 2012 02:10:27 +0200
+
+mdbtools (0.7~rc1-4) unstable; urgency=low
+
+  * Refresh and reactivated old patches:
+    + maintainermode avoids configure warning. Default is now enable.
+    + treeviewmodel fixes some casting in gmdb2.
+    + filelocals restricts the scope of some functions in gmdb (static).
+  * Removed directory debian/oldpatches.
+  * Added support for REPID (UUID) fields. Thanks Will Daniels from Ubuntu.
+  * Updated patch 03_documentation:
+    + better cleaning of documentation.
+    + don't ignore openjade failure, even if book1.htm was generated.
+    + test existence of install rather userguide.
+    temporary files.
+  * Add "Build-Depends: docbook" so that docbook-dsssl doesn't pull alternative
+    docbook-xml, resulting in undetected openjade failure.
+  * New patch for INSTALL to have new source loation on github.
+  * New patch to fix schema support in mdb-export when using INSERT statements.
+  * New patch so namespace cpp reserved keyword is not used in headers.
+
+ -- Jean-Michel Vourgère <jmv_deb@nirgal.com>  Thu, 02 Feb 2012 21:12:19 +0100
+
+mdbtools (0.7~rc1-3) unstable; urgency=low
+
+  * Fix lintian unversioned-copyright-format-uri.
+  * Updated 05-nolibexit patch forwarded address.
+  * Moved documentation in its own package. It can't be in a "Multi-Arch:
+    same" package. (Closes: #655174)
+  * New debug symbols package mdbtools-dbg.
+
+ -- Jean-Michel Vourgère <jmv_deb@nirgal.com>  Tue, 10 Jan 2012 23:11:30 +0100
+
+mdbtools (0.7~rc1-2) unstable; urgency=low
+
+  * New maintainer. (Closes: #635954)
+  * New upstream release:
+    + Used printf %f for small floats export. Thanks Vincent Fourmond. (Closes:
+      #220403)
+    + Fixed internal ordering of columns. (Closes: #233281)
+    + Fixed Oracle export types. (Closes: #358670)
+    + Fixed mdb-prop SEGV. (Closes: #412432)
+    + Properly quote column names in mdb-export. Removed -S sanitisation
+      option. (Closes: #470405, #470413)
+    + Fixed NULL export in mdb-export, no longer exported as "". (Closes:
+      #470414)
+    + New option in mdb-schema to DROP existing tables. (Closes: #514843)
+    + ODBC: Returns SQL_NO_DATA at end of data. (Closes: #514986)
+    + Export Memo type into postgres Text type.(Closes: #565258)
+    + Fixed timestamp exports. (Closes: #602774)
+  * Removed old debian patches. They all were applied upstream.
+  * Bump Standards-Version to 3.9.2: No change needed.
+  * Added build-dependency on libglib2.0-dev, dh-autoreconf, rarian-compat,
+    openjade, docbook-dsssl. Change automake1.10 into automake >= 1:1.10.
+  * Fixed mdbtools-gmdb description for lintian spelling check.
+  * Changed desktop file:
+    + Added msaccess mime-types.
+    + Removed icon extension.
+    + Removed obsolete category Application.
+  * Linker option -as-needed now upstream too.
+  * Added version to packages names because of ABI change. Split
+    libmdbtools into libmdb2 and libmdbsql2.
+  * Included doc/faq.html in debian package.
+  * Build doc/install.sgml files:
+    + New build denpendencies on openjade and docbook-dsssl.
+    + Patch 03_documentation to build the html files.
+  * New doc-base files.
+  * Added libmdbodbc postinst/prerm for automatic registration by
+    odbcinst.
+  * override_dh_autoreconf to preserve upstream INSTALL file: don't use -f.
+  * Switch to multi-arch:
+    + Patch to install libmdbodbc into /usr/lib/odbc/.
+    + Actually moved it into /usr/lib/$arch/odbc/.
+    + Don't call ldconfig in postinst/prerm for that library.
+    + libmdbodbc1.postinst: Remove driver path.
+    + Switch to compat 9.
+    + Build-Depends on debhelper (>= 8.1.3~)
+    + libmdbodbc1 breaks unixodbc (<< 2.2.14p2-3), odbcinst1debian2
+      (<< 2.2.14p2-3), libiodbc2. See unixodbc NEWS.
+    + Updated install files.
+    + 2 lintian overrides.
+  * Updated watch file.
+  * Migrated copyright file to dep5 format.
+  * Changed Homepage field in control.
+
+ -- Jean-Michel Vourgère <jmv_deb@nirgal.com>  Mon, 02 Jan 2012 01:10:30 +0100
+
+mdbtools (0.5.99.0.6pre1.0.20051109-7.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Remove references to other libraries from dependency_libs field
+    (Closes: #619683).
+
+ -- Luk Claes <luk@debian.org>  Mon, 30 May 2011 18:56:21 +0200
+
+mdbtools (0.5.99.0.6pre1.0.20051109-7) unstable; urgency=low
+
+  * debian/control:
+    + Update maintainer address.
+    + Bump Standards-Version to 3.8.4. (No changes needed.)
+    + Remove quilt from Build-Depends.
+  * debian/rules: Remove '--with quilt' dh option.
+  * debian/source/format: Switch to 3.0 (quilt).
+  * debian/patches/035-filelocals.patch: Refresh patch.
+  * debian/patches/070-unixodbc-api.patch: Update for changes to unixodbc
+    API. (Closes: #577353)
+
+ -- Tim Retout <diocles@debian.org>  Sun, 18 Apr 2010 03:33:23 +0100
+
+mdbtools (0.5.99.0.6pre1.0.20051109-6) unstable; urgency=low
+
+  * debian/control:
+    + Build-Depend on libreadline-dev instead of libreadline5-dev.
+      (Closes: #553810)
+    + Build-Depend on libncurses-dev as an alternative to libncurses5-dev.
+    + Build-Depend on txt2man.
+    + Update Standards-Version to 3.8.3.
+  * debian/README.source: New file.
+  * debian/patches/fix-mdb-export-usage: New patch to remove duplicate '-Q'
+    in mdb-export command-line help. (Closes: #514848)
+  * debian/patches/000-manpages: Drop patch.
+  * debian/patches/use-system-txt2man: New patch to consolidate man page
+    generation, and avoid using local txt2man copy.
+  * debian/rules: Remove generated man pages during clean.
+  * Add descriptive headers to several patches.
+  * Add missing man pages. (Closes: #191631)
+    + debian/patches/add-man-pages: New patch.
+    + debian/mdbtools-gmdb.install: Install gmdb2 man page.
+
+ -- Tim Retout <tim@retout.co.uk>  Sat, 14 Nov 2009 10:56:15 +0000
+
+mdbtools (0.5.99.0.6pre1.0.20051109-5) unstable; urgency=medium
+
+  * New maintainer. (Closes: #414528)
+  * Set urgency medium for RC bugfix.
+  * debian/control:
+    + Add libglade2-dev to Build-Depends. (Closes: #531980, #536935)
+      Thanks to Michael Terry.
+    + Remove URLs from Description, and use new Homepage field.
+      (Closes: #439582)
+    + Add Vcs-* fields.
+    + Add ${misc:Depends} to Depends of binary packages.
+    + Replace deprecated ${Source-Version} in mdbtools-dev Depends.
+    + Bump Standards-Version to 3.8.2.
+    + Change source package Section to 'database'.
+  * debian/libmdbodbc.symbols, debian/libmdbtools.symbols:
+    + Add symbols files for library packages.
+  * Rewrite build system.
+    + debian/compat: Bump to 7.
+    + debian/control:
+      - Bump debhelper build dependency, add quilt and remove cdbs.
+      - Add build dependencies on autoconf, automake1.10 and libtool.
+      - Build-Conflicts against autoconf2.13 and automake1.4.
+    + debian/rules:
+      - Use dh7 and quilt, and regenerate autotools
+        during build.
+      - Set LDFLAGS=-Wl,--as-needed during configure.
+      - Drop --enable-sql configure flag, no longer exists.
+    + Use same prefix level for all patches.
+    + Move changes from Debian diff into 001-previous-debian-diff.patch
+    + Drop 999-autogen.patch
+  * debian/copyright: Add copyright headers and update licensing.
+  * debian/mdbtools-gmdb.menu: Move to 'Applications/Data Management'.
+  * debian/gmdb2.xpm: Resize to 32x32 pixels.
+  * debian/patches/mdb-hexdump-argc.patch: Small fix to get usage
+    statement to print correctly.
+  * debian/patches/odbc-close-connections.patch: Actually close
+    database connections on odbc_close. (Closes: #509240)
+
+ -- Tim Retout <tim@retout.co.uk>  Mon, 20 Jul 2009 11:43:32 +0200
+
+mdbtools (0.5.99.0.6pre1.0.20051109-4) unstable; urgency=low
+
+  * QA upload.
+  * Package is orphaned (#414528); set maintainer to Debian QA Group.
+  * Switch to debhelper 5.
+    - Replace dh_movefiles with dh_install.
+    - debian/mdbtools.install: Since dh_install complains on non-existent
+      sources, remove /usr/bin/pr*, which upstream no longer installs.
+    - debian/libmdbtools.postinst: Let debhelper take care of ldconfig.
+  * debian/control: Make the extended description fit in 80 columns.
+  * debian/rules:
+    - Add support for DEB_BUILD_OPTIONS=noopt.
+    - Remove support for DEB_BUILD_OPTIONS=debug.
+    - Let dh_strip handle DEB_BUILD_OPTIONS=nostrip.
+  * debian/watch: Add.
+  * Conforms to Standards version 3.7.2.
+
+ -- Matej Vela <vela@debian.org>  Wed, 11 Apr 2007 01:23:54 +0200
+
+mdbtools (0.5.99.0.6pre1.0.20051109-3.1) unstable; urgency=low
+
+  * NMU
+  * New patch 080-size_t for fix segfaults on 64-bit archs (closes: #377542)
+
+ -- Vincent Fourmond <fourmond@debian.org>  Thu, 22 Mar 2007 17:17:03 +0100
+
+mdbtools (0.5.99.0.6pre1.0.20051109-3) unstable; urgency=low
+
+  * Acknowledge NMU. (Closes: #234031, #321020, #351215, #354595, #355431)
+  * Fix 64-bit issues with the ODBC support. (Closes: #360436)
+
+ -- Filip Van Raemdonck <mechanix@debian.org>  Mon, 10 Apr 2006 19:44:56 +0200
+
+mdbtools (0.5.99.0.6pre1.0.20051109-2.1) unstable; urgency=low
+
+  * NMU
+  * Fix typo in conflicts/replaces for libmdbodbc. Closes: #354595.
+  * debian/patches/056-libmdb-data.patch: Fix infinite recursion with infinite
+    arguments. Closes: #351215.
+  * Fix Debian menu, add Gnome desktop file. Closes: #234031.
+
+ -- Matthias Klose <doko@debian.org>  Sun,  5 Mar 2006 15:53:27 +0000
+
+mdbtools (0.5.99.0.6pre1.0.20051109-2) unstable; urgency=low
+
+  * Split out libmdbodbc package. (Closes: #323255)
+  * More CVS patches, including the boolean read fix. (Closes: #345978)
+
+ -- Filip Van Raemdonck <mechanix@debian.org>  Wed, 01 Feb 2006 19:49:43 +0100
+
+mdbtools (0.5.99.0.6pre1.0.20051109-1) unstable; urgency=low
+
+  * Apply selected patches from upstream CVS.
+  * Acknowledge NMUs. (Closes: #287648, #315608, #326323)
+  * Document mdb-schema -S and -N switches. (Closes: #281336)
+  * Install pkgconfig files. (Closes: #289644)
+
+ -- Filip Van Raemdonck <mechanix@debian.org>  Sun, 29 Jan 2006 16:19:02 +0100
+
+mdbtools (0.5.99.0.6pre1.0.20050409-1.2) unstable; urgency=low
+
+  * NMU
+  * Remove '#include <config.h>' from mdbtools.h. Still the outstanding problem
+    of a silent ABI change, if HAVA_ICONV is not defined.
+    Apply suggested fix for #323256.
+  * Build-depend on libreadline5-dev (closes: #326323).
+
+ -- Matthias Klose <doko@debian.org>  Sun, 18 Sep 2005 08:57:35 +0000
+
+mdbtools (0.5.99.0.6pre1.0.20050409-1.1) unstable; urgency=low
+
+  * NMU
+  * rebuild against odbcinst1debian1 (closes: #315608)
+  * fix build with gcc-4.0 (closes: #287648)
+
+ -- Rene Engelhard <rene@debian.org>  Tue,  2 Aug 2005 16:15:54 +0200
+
+mdbtools (0.5.99.0.6pre1.0.20050409-1) unstable; urgency=high
+
+  * New CVS snapshot.
+  * Fix FTBFS. This was actually a backwards incompatibility in GTK+ 2.6.
+    (Closes: #301121)
+
+ -- Filip Van Raemdonck <mechanix@debian.org>  Mon, 25 Apr 2005 18:08:59 +0200
+
+mdbtools (0.5.99.0.6pre1.0.20041117-2) unstable; urgency=medium
+
+  * Add python to Build-Depends:. (Closes: #286601)
+
+ -- Filip Van Raemdonck <mechanix@debian.org>  Tue, 21 Dec 2004 18:10:46 +0100
+
+mdbtools (0.5.99.0.6pre1.0.20041117-1) unstable; urgency=low
+
+  * New CVS snapshot, with improved data extraction. (Closes: #245076, #254428)
+  * Strip off one level in manpage patches.
+  * Correct gmdb menu entry. (Closes: #274572)
+
+ -- Filip Van Raemdonck <mechanix@debian.org>  Tue, 07 Dec 2004 19:31:47 +0100
+
+mdbtools (0.5.99.0.6pre1-2) unstable; urgency=high
+
+  * Correctly set installation paths. (Closes: #273380)
+
+ -- Filip Van Raemdonck <mechanix@debian.org>  Sun, 26 Sep 2004 14:56:50 +0200
+
+mdbtools (0.5.99.0.6pre1-1) unstable; urgency=high
+
+  * Upstream CVS snapshot.
+  * Acknowledge NMU. (Closes: #248863)
+  * Add missing prototypes. (Closes: #263241)
+  * The rebuild automatically transitions to recent gnutls. (Closes: #263655)
+  * Fix mdbtools-gmdb description grammar mistake. (Closes: #268528)
+  * Keep ODBC unittest out of the package. (Closes: #269153)
+
+ -- Filip Van Raemdonck <mechanix@debian.org>  Sat, 18 Sep 2004 10:08:14 +0200
+
+mdbtools (0.5.99-2.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix up inter-library dependencies. (Closes: #248863)
+
+ -- Steve Langasek <vorlon@debian.org>  Mon, 26 Jul 2004 03:29:26 -0700
+
+mdbtools (0.5.99-2) unstable; urgency=medium
+
+  * Add bison builddep. (Closes: #233484)
+
+ -- Filip Van Raemdonck <mechanix@debian.org>  Wed, 18 Feb 2004 19:05:35 +0100
+
+mdbtools (0.5.99-1) unstable; urgency=medium
+
+  * New maintainer. Thanks Noel.
+  * New upstream snapshot, greatly reducing the Debian diff due to
+    incorporated patches or alternative ones.
+    - The CVS version shows column titles at their full width. (Closes: #178903)
+    - It should deal with char signedness. (Closes: #181229)
+    - It can handle underscores in table names. (Closes: #186336)
+    - It also handles more column types now. (Closes: #204813)
+    - And it can do string comparisons in JET4 files. (Closes: #226449)
+  * Acknowledge NMUs.
+    (Closes: #206248, #206420, #215091, #215971, #216194, #216400, #217989)
+    (Closes: #222713, #230824, #230914)
+  * Update gmdb package description. (Closes: #209964)
+
+ -- Filip Van Raemdonck <mechanix@debian.org>  Mon, 16 Feb 2004 19:28:11 +0100
+
+mdbtools (0.5-6.6) unstable; urgency=high
+
+  * NMU
+  * Relibtooled and auto*ed. (Closes: #230824)
+  * [debian/rules] Remove autom4te.cache as part of clean.
+
+ -- J.H.M. Dassen (Ray) <jdassen@debian.org>  Tue,  3 Feb 2004 11:52:50 +0100
+
+mdbtools (0.5-6.5) unstable; urgency=high
+
+  * NMU with permission from Noel.
+  * Fix sql row reader to not include rows with NULL columns for which a WHERE
+    clause exists. (Closes: #222713)
+  * Remove unneeded libgnome-dev builddep, which caused some libraries to be
+    linked with glib 1.2 while others were (correctly) linked with glib 2.
+
+ -- Filip Van Raemdonck <mechanix@debian.org>  Mon, 01 Dec 2003 19:14:21 +0100
+
+mdbtools (0.5-6.4) unstable; urgency=high
+
+  * NMU
+  * [debian/control] Removed build dependency on liblinc-dev which is no
+    longer a standalone package. (Closes: #217989)
+
+ -- J.H.M. Dassen (Ray) <jdassen@debian.org>  Wed, 12 Nov 2003 21:44:51 +0100
+
+mdbtools (0.5-6.3) unstable; urgency=medium
+
+  * NMU
+  * [debian/control] Added build dependency on liblinc-dev.
+
+ -- J.H.M. Dassen (Ray) <jdassen@debian.org>  Sat, 18 Oct 2003 16:07:24 +0200
+
+mdbtools (0.5-6.2) unstable; urgency=medium
+
+  * NMU
+  * Fixed inter-library dependencies: (Closes: #215971).
+    * [src/sql/Makefile.am] Set libmdbsql_la_LIBADD appropriately.
+    * Regenerated auto*.
+  * [debian/control]
+    * Dropped libgtk1.2-dev from build dependencies.
+    * Added mdbtools-dev Depends: libglib2.0-dev. (Closes: #206248)
+
+ -- J.H.M. Dassen (Ray) <jdassen@debian.org>  Fri, 17 Oct 2003 10:00:58 +0200
+
+mdbtools (0.5-6.1) unstable; urgency=medium
+
+  * NMU
+  * [debian/rules] Added 'source-updates' target; made updates of
+    config.{guess,sub} visible.
+  * [configure.in] Added 'AM_MAINTAINER_MODE' to ensure the auto* files won't
+    be regenerated at build time (which introduces more build dependencies,
+    timeskew issues etc.). (Closes: #206420)
+  * Regenerated auto*.
+  * [debian/control] Work around the resulting libtool needing to have $SED set.
+
+ -- J.H.M. Dassen (Ray) <jdassen@debian.org>  Fri, 10 Oct 2003 12:44:24 +0200
+
+mdbtools (0.5-6) unstable; urgency=low
+
+  * added missing dependencies of the -dev package
+    thx Martin
+    (closes: Bug#206230)
+    (closes: Bug#206248)
+
+ -- Noel Koethe <noel@debian.org>  Tue, 19 Aug 2003 22:07:00 +0200
+
+mdbtools (0.5-5) unstable; urgency=low
+
+  * mdbtools-gmdb section corrected to gnome
+  * updated Standard-Version
+
+ -- Noel Koethe <noel@debian.org>  Tue, 29 Jul 2003 16:31:00 +0200
+
+mdbtools (0.5-4) unstable; urgency=low
+
+  * updated libtool. Thanks Ray!
+    (closes: Bug#177974)
+
+ -- Noel Koethe <noel@debian.org>  Sun, 20 Jul 2003 14:38:00 +0200
+
+mdbtools (0.5-3) unstable; urgency=low
+
+  * added patch from Norbert Kiesel which fixed "segfault which reading memos
+    which end at page boundary" see also his upstream report at
+    https://sf.net/tracker/index.php?func=detail&aid=673000&group_id=2294&atid=102294
+    (closes: Bug#177988)
+  * moved gmdb to an extra package
+    (closes: Bug#178897)
+
+ -- Noel Koethe <noel@debian.org>  Wed, 29 Jan 2003 16:01:00 +0100
+
+mdbtools (0.5-2) unstable; urgency=low
+
+  * added missing Build-Depends
+
+ -- Noel Koethe <noel@debian.org>  Wed, 22 Jan 2003 14:26:00 +0100
+
+mdbtools (0.5-1) unstable; urgency=low
+
+  * new upstream release from 2003-01-19
+    (closes: Bug#177832)
+  * corrected "worst package description of the year" (from
+    a DD who isn't able to set the correct severity. Please
+    read http://www.debian.org/Bugs/Developer#severities
+    before filling bugs next time and let your feelings out
+    of bug reports!)
+    (closes: Bug#177849)
+
+ -- Noel Koethe <noel@debian.org>  Wed, 22 Jan 2003 10:56:00 +0100
+
+mdbtools (0.4-1) unstable; urgency=low
+
+  * Initial Release.
+    (closes: Bug#88901)
+
+ -- Noel Koethe <noel@debian.org>  Wed, 15 Jan 2003 20:50:15 +0100

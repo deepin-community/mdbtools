@@ -1,0 +1,70 @@
+Description: Restore obsolete function mdb_init mdb_exit
+ beta3 was released to unstable by accident. It contained a soname bump.
+ This is only to prevent another extra soname bump. This file should be
+ deleted next time upstream changes its api.
+Author: Jean-Michel Vourgère <nirgal@debian.org>
+Forwarded: not-needed
+Last-Update: 2020-12-13
+
+Index: mdbtools/src/libmdb/Makefile.am
+===================================================================
+--- mdbtools.orig/src/libmdb/Makefile.am
++++ mdbtools/src/libmdb/Makefile.am
+@@ -1,5 +1,5 @@
+ lib_LTLIBRARIES	=	libmdb.la
+-libmdb_la_SOURCES=	catalog.c file.c table.c data.c dump.c backend.c money.c sargs.c index.c like.c write.c stats.c map.c props.c worktable.c options.c iconv.c version.c rc4.c
++libmdb_la_SOURCES=	catalog.c mem.c file.c table.c data.c dump.c backend.c money.c sargs.c index.c like.c write.c stats.c map.c props.c worktable.c options.c iconv.c version.c rc4.c
+ libmdb_la_LDFLAGS = -version-info $(VERSION_INFO)
+ if FAKE_GLIB
+ libmdb_la_SOURCES += fakeglib.c
+Index: mdbtools/src/libmdb/mem.c
+===================================================================
+--- /dev/null
++++ mdbtools/src/libmdb/mem.c
+@@ -0,0 +1,31 @@
++/* MDB Tools - A library for reading MS Access database files
++ * Copyright (C) 2000 Brian Bruns
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Library General Public
++ * License as published by the Free Software Foundation; either
++ * version 2 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Library General Public License for more details.
++ *
++ * You should have received a copy of the GNU Library General Public
++ * License along with this library; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
++ */
++
++#include "mdbtools.h"
++
++MDB_DEPRECATED(void,
++mdb_init())
++{
++	fprintf(stderr, "mdb_init() is DEPRECATED and does nothing. Stop calling it.\n");
++}
++
++MDB_DEPRECATED(void,
++mdb_exit())
++{
++	fprintf(stderr, "mdb_exit() is DEPRECATED and does nothing. Stop calling it.\n");
++}
+Index: mdbtools/include/mdbtools.h.in
+===================================================================
+--- mdbtools.orig/include/mdbtools.h.in
++++ mdbtools/include/mdbtools.h.in
+@@ -482,6 +482,10 @@ typedef struct {
+ 	MdbAny	value;
+ } MdbSarg;
+ 
++/* mem.c */
++extern MDB_DEPRECATED(void, mdb_init(void));
++extern MDB_DEPRECATED(void, mdb_exit(void));
++
+ /* version.c */
+ const char *mdb_get_version(void);
+ 
