@@ -1,0 +1,3 @@
+usr/bin/mdb-*
+usr/share/man/man1/mdb-*
+usr/share/bash-completion/completions/*

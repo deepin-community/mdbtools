@@ -1,4 +1,12 @@
 #!/usr/bin/make -f
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all
 
 %:
 	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- --with-unixodbc=/usr
+
+override_dh_installdocs:
+	dh_installdocs --no-package=mdbtools-doc --link-doc=libmdb3
+	dh_installdocs --package=mdbtools-doc

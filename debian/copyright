@@ -1,22 +1,251 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: template-repository
-Source: https://github.com/deepin-community/template-repository
+Upstream-Name: MDBTools
+Upstream-Contact: Evan Miller <emmiller@gmail.com>
+Source: https://github.com/mdbtools/mdbtools/
+Files-Excluded: api_docx/custom.css.map
 
 Files: *
-Copyright: 2023 Tsic404 <liuheng@deepin.org>
+Copyright: 2000-2005,2007,2010,2011,2016 Brian Bruns <camber@ais.org>
+           2000 Brent Johnson <xone47@yahoo.com>
+           2000 Carl Seutter <cgseutter@worldnet.att.net>
+           2000 Georg Bauer <gb@hugo.westfalen.de>
+           2000 Karl Nyberg <karl@grebyn.com>
+           2000 Michael Wood
+           2000 Tim Nelson <vbprogie@hotmail.com>
+           2000 Trevor Harrison <trevor@harrison.org>
+           2001 Oliver Stieber
+           2001 Yves Maingoy
+           2002 Ben McKeegan
+           2002 Don Badrak
+           2002 Mike Finger
+           2002 trewitt <trewitt>
+           2004-2006 Jeff Smith <whydoubt@yahoo.com>
+           2004,2005 David Mansfield <mdbtools@dm.cobite.com>
+           2004,2012 Filip Van Raemdonck <mechanix@debian.org>
+           2004 Alexandre Horst
+           2004 Luciano Miguel Wolf
+           2004 Michael Meeks <michael@ximian.com>
+           2004 teodor <teodor@sigaev.ru>
+           2004 Wind Li
+           2005 Alex Hunsaker <badalex@gmail.com>
+           2005 Artur Frysiak
+           2005 calvinrsmith <calvinrsmith>
+           2005 Edward Catmur
+           2005 Horst Knorr
+           2005 Leonard Leblanc <lleblanc@macroelite.ca>
+           2005 Martin Ellis
+           2005 Mike Prudence
+           2005 Pedro Gutierrez
+           2005 Yasir Assam
+           2008 Brett Hutley
+           2009,2010 Tim Retout <<tim@retout.co.uk>
+           2009,2011 Mark Williams <markrwilliams@gmail.com>
+           2009 Pablo Llopis <pablo.llopis+ml@gmail.com>
+           2009 Rene Engelhard <rene@debian.org>
+           2009 Steve Langasek <vorlon@debian.org>
+           2009 Vincent Fourmond <fourmond@debian.org>
+           2010,2011 Bernhard Reiter <ockham@raz.or.at>
+           2011-2017,2020-2021 Jean-Michel Nirgal Vourgère <contact_mdbtools@nirgal.com>
+           2011,2013,2018 James Ahlborn <jtahlborn@yahoo.com>
+           2011 Dmitry Nikitin <luckas_fb@mail.ru>
+           2011 Jakob Egger <jabakobob@gmail.com>
+           2011 xsloader <xsloader@xs.guild.gs>
+           2012-2015 Jimmy Taker <jimmytaker@gmx.de>
+           2012 Adam Vandenberg <flangy@gmail.com>
+           2012 branche <branche@users.sourceforge.net>
+           2012 Hans de Goede <hdegoede@redhat.com>
+           2012 Will Daniels <mail@willdaniels.co.uk>
+           2013,2014 tyzhaoqi <tyzhaoqi@gmail.com>
+           2013,2015 William Rogers <rogers.wb@gmail.com>
+           2013 Boris Barbulovski <bbarbulovski@gmail.com>
+           2013 Chris Kerr <cjk34@cam.ac.uk>
+           2014 David Hicks <david@hicks.id.au>
+           2014 lovelytwo
+           2014 Maurus Cuelenaere <mcuelenaere@gmail.com>
+           2014 Mihai Draghicioiu <mihai.draghicioiu@gmail.com>
+           2014 Paul Fitzpatrick <paulfitz@alum.mit.edu>
+           2014 Shane Mc Cormack <shanemcc@gmail.com>
+           2014 Ugo Di Girolamo <ugo@urbancompass.com>
+           2015,2016 Sam Shaw <samuel.shaw@sdsgroup.com.au>
+           2015,2017 leecher1337 <leecher@dose.0wnz.at>
+           2015 Dan Villiom Podlaski Christiansen <danchr@gmail.com>
+           2015 Dmitrij D. Czarkoff <czarkoff@gmail.com>
+           2015 Sam Stuck <sam.stuck@binaryfetish.com>
+           2015 Stefano Costa <steko@iosa.it>
+           2015 Vladimir Rutsky <vladimir.rutsky@transas.com>
+           2016 Ewen McNeill <ewen@naos.co.nz>
+           2016 Joshua Short <joshua.short@gmail.com>
+           2017 chunhao <chuchuhao831@gmail.com>
+           2017 Joshua Pinter <joshuapinter@gmail.com>
+           2017 Kane O'Donnell <kane.odonnell@datamine.com>
+           2017 Edward Abraham <edward@dragonfly.co.nz>
+           2017 Richard Mansfield <richard@dragonfly.co.nz>
+           2018-2021 Evan Miller <emmiller@gmail.com>
+           2018,2019 Cyber Emissary <admin@cyberemissary.com>
+           2018 Bruce Johnson <brjohnsn@gmail.com>
+           2018 Mark Ord <ord@scholars.home>
+           2018 Matt Newman <mdjnewman@gmail.com>
+           2019 Peter Kaukov <peter.kaukov@gmail.com>
+           2019 VJ <vj@itsupportme.com>
+           2020,2021 James Woodcock <james_woodcock@yahoo.co.uk>
+           2020 Nyall Dawson <nyall.dawson@gmail.com>
+           2020 Rainer Hurling <rhurlin@gwdg.de>
+           2021 Pedro Morgan <pedromorgan@gmail.com>
+           2021 kalpha2 <kicking177@gmail.com>
+           2021 Dan Church <amphetamachine@gmail.com>
+           2021 Sam James <sam@gentoo.org>
 License: GPL-2+
- This package is free software; you can redistribute it and/or modify
+Comment: Copyright information is a copy of the AUTHORS file.
+
+Files: include/*
+       lib*.pc.in
+       src/libmdb/*
+       src/sql/*
+       src/odbc/*
+Copyright: 2000-2005,2007,2010,2011,2016 Brian Bruns <camber@ais.org>
+           2000 Brent Johnson <xone47@yahoo.com>
+           2000 Carl Seutter <cgseutter@worldnet.att.net>
+           2000 Georg Bauer <gb@hugo.westfalen.de>
+           2000 Karl Nyberg <karl@grebyn.com>
+           2000 Michael Wood
+           2000 Tim Nelson <vbprogie@hotmail.com>
+           2000 Trevor Harrison <trevor@harrison.org>
+           2001 Oliver Stieber
+           2001 Yves Maingoy
+           2002 Ben McKeegan
+           2002 Don Badrak
+           2002 Mike Finger
+           2002 trewitt <trewitt>
+           2004-2006 Jeff Smith <whydoubt@yahoo.com>
+           2004,2005 David Mansfield <mdbtools@dm.cobite.com>
+           2004,2012 Filip Van Raemdonck <mechanix@debian.org>
+           2004 Alexandre Horst
+           2004 Luciano Miguel Wolf
+           2004 Michael Meeks <michael@ximian.com>
+           2004 teodor <teodor@sigaev.ru>
+           2004 Wind Li
+           2005 Alex Hunsaker <badalex@gmail.com>
+           2005 Artur Frysiak
+           2005 calvinrsmith <calvinrsmith>
+           2005 Edward Catmur
+           2005 Horst Knorr
+           2005 Leonard Leblanc <lleblanc@macroelite.ca>
+           2005 Martin Ellis
+           2005 Mike Prudence
+           2005 Pedro Gutierrez
+           2005 Yasir Assam
+           2008 Brett Hutley
+           2009,2010 Tim Retout <<tim@retout.co.uk>
+           2009,2011 Mark Williams <markrwilliams@gmail.com>
+           2009 Pablo Llopis <pablo.llopis+ml@gmail.com>
+           2009 Rene Engelhard <rene@debian.org>
+           2009 Steve Langasek <vorlon@debian.org>
+           2009 Vincent Fourmond <fourmond@debian.org>
+           2010,2011 Bernhard Reiter <ockham@raz.or.at>
+           2011-2017,2020-2021 Jean-Michel Nirgal Vourgère <contact_mdbtools@nirgal.com>
+           2011,2013,2018 James Ahlborn <jtahlborn@yahoo.com>
+           2011 Dmitry Nikitin <luckas_fb@mail.ru>
+           2011 Jakob Egger <jabakobob@gmail.com>
+           2011 xsloader <xsloader@xs.guild.gs>
+           2012-2015 Jimmy Taker <jimmytaker@gmx.de>
+           2012 Adam Vandenberg <flangy@gmail.com>
+           2012 branche <branche@users.sourceforge.net>
+           2012 Hans de Goede <hdegoede@redhat.com>
+           2012 Will Daniels <mail@willdaniels.co.uk>
+           2013,2014 tyzhaoqi <tyzhaoqi@gmail.com>
+           2013,2015 William Rogers <rogers.wb@gmail.com>
+           2013 Boris Barbulovski <bbarbulovski@gmail.com>
+           2013 Chris Kerr <cjk34@cam.ac.uk>
+           2014 David Hicks <david@hicks.id.au>
+           2014 lovelytwo
+           2014 Maurus Cuelenaere <mcuelenaere@gmail.com>
+           2014 Mihai Draghicioiu <mihai.draghicioiu@gmail.com>
+           2014 Paul Fitzpatrick <paulfitz@alum.mit.edu>
+           2014 Shane Mc Cormack <shanemcc@gmail.com>
+           2014 Ugo Di Girolamo <ugo@urbancompass.com>
+           2015,2016 Sam Shaw <samuel.shaw@sdsgroup.com.au>
+           2015,2017 leecher1337 <leecher@dose.0wnz.at>
+           2015 Dan Villiom Podlaski Christiansen <danchr@gmail.com>
+           2015 Dmitrij D. Czarkoff <czarkoff@gmail.com>
+           2015 Sam Stuck <sam.stuck@binaryfetish.com>
+           2015 Stefano Costa <steko@iosa.it>
+           2015 Vladimir Rutsky <vladimir.rutsky@transas.com>
+           2016 Ewen McNeill <ewen@naos.co.nz>
+           2016 Joshua Short <joshua.short@gmail.com>
+           2017 chunhao <chuchuhao831@gmail.com>
+           2017 Joshua Pinter <joshuapinter@gmail.com>
+           2017 Kane O'Donnell <kane.odonnell@datamine.com>
+           2017 Edward Abraham <edward@dragonfly.co.nz>
+           2017 Richard Mansfield <richard@dragonfly.co.nz>
+           2018-2021 Evan Miller <emmiller@gmail.com>
+           2018,2019 Cyber Emissary <admin@cyberemissary.com>
+           2018 Bruce Johnson <brjohnsn@gmail.com>
+           2018 Mark Ord <ord@scholars.home>
+           2018 Matt Newman <mdjnewman@gmail.com>
+           2019 Peter Kaukov <peter.kaukov@gmail.com>
+           2019 VJ <vj@itsupportme.com>
+           2020,2021 James Woodcock <james_woodcock@yahoo.co.uk>
+           2020 Nyall Dawson <nyall.dawson@gmail.com>
+           2020 Rainer Hurling <rhurlin@gwdg.de>
+           2021 Pedro Morgan <pedromorgan@gmail.com>
+           2021 kalpha2 <kicking177@gmail.com>
+           2021 Dan Church <amphetamachine@gmail.com>
+           2021 Sam James <sam@gentoo.org>
+License: LGPL-2+
+Comment: Copyright information is a copy of the AUTHORS file.
+
+Files: debian/*
+Copyright: 2003 Noel Koethe <noel@debian.org>
+           2003-2004 J.H.M. Dassen (Ray) <jdassen@debian.org>
+           2003-2006 Filip Van Raemdonck <mechanix@debian.org>
+           2004 Steve Langasek <vorlon@debian.org>
+           2005 Rene Engelhard <rene@debian.org>
+           2005-2006 Matthias Klose <doko@debian.org>
+           2007 Vincent Fourmond <fourmond@debian.org>
+           2007 Matej Vela <vela@debian.org>
+           2008-2010 Tim Retout <diocles@debian.org>
+           2011 Luk Claes <luk@debian.org>
+           2011-2021 Jean-Michel Vourgère <nirgal@debian.org>
+           2012 Nelson A. de Oliveira <naoliv@debian.org>
+License: GPL-2+
+
+Files: doc/txt2man
+Copyright: 2001-2003 Marc Vertes <mvertes@free.fr>
+License: GPL-2+
+
+License: LGPL-2+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Library General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Library General Public License for more details.
+ .
+ You should have received a copy of the GNU Library General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+ 02110-1301  USA
+ .
+ On Debian systems, the text of the GNU Lesser General Public License
+ version 2 can be found in `/usr/share/common-licenses/LGPL-2'.
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
  the Free Software Foundation; either version 2 of the License, or
  (at your option) any later version.
  .
- This package is distributed in the hope that it will be useful,
+ This program is distributed in the hope that it will be useful,
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  GNU General Public License for more details.
  .
- You should have received a copy of the GNU General Public License
- along with this program. If not, see <https://www.gnu.org/licenses/>
+ You should have received a copy of the GNU General Public License along
+ with this program; if not, write to the Free Software Foundation, Inc.,
+ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  .
- On Debian systems, the complete text of the GNU General
- Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+ On Debian systems, the text of the GNU General Public License version 2
+ can be found in `/usr/share/common-licenses/GPL-2'.

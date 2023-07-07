@@ -1,0 +1,9 @@
+# ODBC use a plugin like system. These libraries should not be linked with:
+usr/lib/${DEB_HOST_MULTIARCH}/odbc/libmdbodbc*.a
+
+# From https://www.debian.org/doc/manuals/maint-guide/advanced.en.html#library :
+# "Shared libraries are distributed as *.so files. (Neither *.a files nor *.la files)"
+# See also policy 10.2:
+# ".la files normally should not be included in the Debian package"
+usr/lib/${DEB_HOST_MULTIARCH}/*.la
+usr/lib/${DEB_HOST_MULTIARCH}/odbc/*.la
